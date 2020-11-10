@@ -145,15 +145,6 @@ public class ModConfiguration
         configData.load();
         spec.setConfig(configData);
     }
-
-    @SubscribeEvent
-    public static void onLoad(final Loading configEvent) {
-
-    }
-
-    @SubscribeEvent
-    public static void onReload(final Reloading configEvent) {
-    }
     
     public static void setupConfig(ModLoadingContext context)
     {

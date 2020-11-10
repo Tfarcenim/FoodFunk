@@ -120,21 +120,6 @@ public class ContainedByUtil
         return list;
     }
 
-    // horrible hack - get the TileEntity corresponding to container
-    public static TileEntity getTileEntityForContainer(Container container, ItemStack itemToSearchFor, BlockPos position, World world)
-    {
-        // iterate over all tileentities nearby
-        for (TileEntity tileentity : getTileEntitiesNearby(position, world))
-        {
-            if (doesContain(tileentity, itemToSearchFor))
-            {
-                return tileentity;
-            }
-        }
-
-        return null;
-    }
-
     static public boolean doesContain(LazyOptional<IItemHandler> lcapability, ItemStack itemToSearchFor)
     {
         // check TileEntity's IItemHandler capability, if provided
@@ -243,19 +228,5 @@ public class ContainedByUtil
 
         return null;
     }
-    
-    public static void checkUpdateSlot(Integer index, IItemHandler itemhandler, ItemStack stack, int count, ItemStack newStack)
-    {
-        if (newStack == null || newStack.isEmpty() || (newStack != stack))
-        {
-            if (newStack == null)
-            {
-                newStack = ItemStack.EMPTY;
-            }
-            // Equivalent to inventory.setInventorySlotContents(i, rotItem);
-            @SuppressWarnings("unused")
-            ItemStack oldStack = itemhandler.extractItem(index, count, false);
-            itemhandler.insertItem(index, newStack, false);
-        }
-    }
+
 }

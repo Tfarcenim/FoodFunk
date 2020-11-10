@@ -1,7 +1,5 @@
 package com.wumple.util.capability.listener.network;
 
-import com.wumple.util.capability.listener.network.BulkUpdateContainerCapabilityMessage;
-import com.wumple.util.capability.listener.network.UpdateContainerCapabilityMessage;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;

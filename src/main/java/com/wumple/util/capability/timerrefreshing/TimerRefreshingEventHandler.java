@@ -1,6 +1,5 @@
 package com.wumple.util.capability.timerrefreshing;
 
-import com.wumple.util.capability.timerrefreshing.ITimerRefreshingCap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

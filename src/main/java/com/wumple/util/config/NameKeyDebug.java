@@ -134,16 +134,13 @@ public class NameKeyDebug
             final BlockRayTraceResult rayTraceResult = (BlockRayTraceResult) mc.objectMouseOver;
             BlockPos blockpos = rayTraceResult.getPos();
 
-            Block block = (blockpos == null) ? null : mc.world.getBlockState(blockpos).getBlock();
+            Block block = mc.world.getBlockState(blockpos).getBlock();
            
             ArrayList<String> nameKeys = NameKeys.getNameKeys(block);
 
-            if (nameKeys != null)
+            for (String nameKey : nameKeys)
             {
-                for (String nameKey : nameKeys)
-                {
-                    e.getRight().add(I18n.format("misc.wumpleutil.debug.namekey.block", nameKey));
-                }
+                e.getRight().add(I18n.format("misc.wumpleutil.debug.namekey.block", nameKey));
             }
         }
     }

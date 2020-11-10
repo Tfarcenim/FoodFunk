@@ -1,6 +1,5 @@
 package com.wumple.util.capability.copier;
 
-import com.wumple.util.capability.copier.ICopyableCap;
 import com.wumple.util.crafting.CraftingUtil;
 import com.wumple.util.crafting.XShapelessRecipe;
 import net.minecraft.inventory.CraftingInventory;

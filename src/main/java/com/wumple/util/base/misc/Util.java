@@ -1,7 +1,6 @@
 package com.wumple.util.base.misc;
 
-public class Util
-{
+public class Util {
     public static <T> T as(Object o, Class<T> t)
     {
         return t.isInstance(o) ? t.cast(o) : null;
@@ -12,11 +11,4 @@ public class Util
         return value == null ? defaultValue : value;
     }
 
-    public static boolean checkBoth(boolean one, boolean two)
-    {
-        boolean ret = true;
-        ret &= one;
-        ret &= two;
-        return ret;
-    }
 }
