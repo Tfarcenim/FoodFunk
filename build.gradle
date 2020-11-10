@@ -44,7 +44,9 @@ minecraft {
     //mappings channel: 'snapshot', version: '20190719-1.14.3'
     mappings channel: config.mc_mappings_channel, version: config.mc_mappings_version
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -54,7 +56,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            //property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -71,7 +73,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            //property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -88,7 +90,7 @@ minecraft {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            //property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
@@ -146,6 +148,8 @@ repositories {
    //    url = "https://libraries.minecraft.net/"
    //}
 }
+
+
 
 allprojects {
     repositories {

@@ -26,16 +26,16 @@ dependencies {
     // Real examples
     // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-    compile fg.deobf('com.wumple.util:wumpleutil:3.6.0') {
+    /*compile fg.deobf('com.wumple.com.wumple.foodfunk.i.util:wumpleutil-1.15.2-4.0.0') {
         transitive = false;
-    }
+    }*/
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 
     // These dependencies get remapped to your current MCP mappings
     // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    // deobf 'com.wumple.util:wumpleutil:2.13.0'
+    // deobf 'com.wumple.com.wumple.foodfunk.i.util:wumpleutil:2.13.0'
 
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
@@ -43,7 +43,7 @@ dependencies {
 
     // for local testing
     // runtimeOnly fg.deobf("com.wumple:megamap:1.14.4-1.2.2")
-    // runtimeOnly fg.deobf("com.wumple.util:wumpleutil:2.13.0")
+    // runtimeOnly fg.deobf("com.wumple.com.wumple.foodfunk.i.util:wumpleutil:2.13.0")
 
     // deobfCompile "com.wumple.wumpleutil:wumpleutil:2.12.6"
     // deobfProvided "com.wumple.megamap:megamap:1.0.7"

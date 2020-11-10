@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 import com.wumple.foodfunk.capability.rot.IRot;
 import com.wumple.foodfunk.capability.rot.Rot;
 import com.wumple.foodfunk.capability.rot.RotInfo;
-import com.wumple.util.capability.listener.network.BulkUpdateContainerCapabilityMessage;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.inventory.container.Container;
@@ -16,6 +15,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.network.NetworkEvent;
+import com.wumple.util.capability.listener.network.BulkUpdateContainerCapabilityMessage;
 
 /**
  * Updates the capability for each slot of a {@link Container}.

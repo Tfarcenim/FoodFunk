@@ -1,17 +1,14 @@
 package com.wumple.foodfunk.chest.freezer;
 
 import com.wumple.foodfunk.ModObjectHolder;
-import com.wumple.util.xchest2.XChestTileEntity;
-
-import net.minecraft.util.SoundEvent;
+import com.wumple.foodfunk.util.SingleChestBlockEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class FreezerTileEntity extends XChestTileEntity
-{
+public class FreezerTileEntity extends SingleChestBlockEntity {
 	public FreezerTileEntity()
 	{
-		super(ModObjectHolder.FreezerBlock_Tile);
+		super(ModObjectHolder.FreezerBlock_Tile,ModObjectHolder.freezer_open,ModObjectHolder.freezer_close);
 	}
 	
 	@Override
@@ -19,16 +16,5 @@ public class FreezerTileEntity extends XChestTileEntity
 	{
 		return new TranslationTextComponent("container.foodfunk.freezer");
 	}
-	
-	@Override
-    protected SoundEvent getOpenSoundEvent()
-    {
-        return ModObjectHolder.freezer_open;
-    }
 
-	@Override
-    protected SoundEvent getCloseSoundEvent()
-    {
-        return ModObjectHolder.freezer_close;
-    }
 }

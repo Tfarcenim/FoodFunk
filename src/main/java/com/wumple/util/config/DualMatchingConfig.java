@@ -1,0 +1,105 @@
+package com.wumple.util.config;
+
+import com.wumple.util.adapter.IThing;
+import com.wumple.util.base.misc.Util;
+import com.wumple.util.config.MatchingConfig;
+import com.wumple.util.config.NameKeys;
+import com.wumple.util.config.SimpleMatchingConfig;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class DualMatchingConfig<T, U>
+{
+    public final MatchingConfig<T> config1;
+    public final MatchingConfig<U> config2;
+
+    public DualMatchingConfig(T falseValue1In, U falseValue2In)
+    {
+        config1 = new MatchingConfig<T>(new HashMap<String, T>(), falseValue1In);
+        config2 = new MatchingConfig<U>(new HashMap<String, U>(), falseValue2In);
+    }
+
+    public DualMatchingConfig(Map<String, T> config1In, T falseValue1In, Map<String, U> config2In, U falseValue2In)
+    {
+        config1 = new MatchingConfig<T>(config1In, falseValue1In);
+        config2 = new MatchingConfig<U>(config2In, falseValue2In);
+    }
+    
+    public SimpleMatchingConfig<T> get1()
+    {
+    	return config1;
+    }
+    
+    public SimpleMatchingConfig<T> get2()
+    {
+    	return config1;
+    }
+    
+    public void clear()
+    {
+    	config1.clear();
+    	config2.clear();
+    }
+
+    // ----------------------------------------------------------------------
+    // Add default properties to config
+
+    // --- add by String
+
+    public boolean addDefaultProperty(String name, T amount1In, U amount2In)
+    {
+        return Util.checkBoth(
+                config1.addDefaultProperty(name, amount1In),
+                config2.addDefaultProperty(name, amount2In));
+    }
+
+    public boolean addDefaultProperty(String[] items, T amount1In, U amount2In)
+    {
+        return Util.checkBoth(
+                config1.addDefaultProperty(items, amount1In),
+                config2.addDefaultProperty(items, amount2In));
+    }
+
+    // --- add by Item
+
+    public boolean addDefaultProperty(Item item, T amount1In, U amount2In)
+    {
+        return Util.checkBoth(
+                config1.addDefaultProperty(item, amount1In),
+                config2.addDefaultProperty(item, amount2In));
+    }
+
+    public boolean addDefaultProperty(Item item, String backup, T amount1In, U amount2In)
+    {
+        return Util.checkBoth(
+                config1.addDefaultProperty(item, backup, amount1In),
+                config2.addDefaultProperty(item, backup, amount2In));
+    }
+
+    // ----------------------------------------------------------------------
+    // Get value for different types
+
+    public Pair<T, U> getProperty(ItemStack itemStack)
+    {
+        ArrayList<String> nameKeys = NameKeys.getNameKeys(itemStack);
+
+        return Pair.of(config1.getProperty(nameKeys), config2.getProperty(nameKeys));
+    }
+    
+    public Pair<T, U> getProperty(IThing thing)
+    {
+        ArrayList<String> nameKeys = thing.getNameKeys();
+
+        return Pair.of(config1.getProperty(nameKeys), config2.getProperty(nameKeys));
+    }
+
+    public Pair<T, U> getProperty(String name)
+    {
+        return Pair.of(config1.getProperty(name), config2.getProperty(name));
+    }
+}

@@ -1,17 +1,18 @@
 package com.wumple.foodfunk.chest.esky;
 
 import com.wumple.foodfunk.ModObjectHolder;
-import com.wumple.util.xchest2.XChestTileEntity;
 
+import com.wumple.foodfunk.util.SingleChestBlockEntity;
+import net.minecraft.tileentity.ChestTileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class EskyTileEntity extends XChestTileEntity
+public class EskyTileEntity extends SingleChestBlockEntity
 {
 	public EskyTileEntity()
 	{
-		super(ModObjectHolder.EskyBlock_Tile);
+		super(ModObjectHolder.EskyBlock_Tile,ModObjectHolder.esky_open,ModObjectHolder.esky_close);
 	}
 	
 	@Override
@@ -19,16 +20,5 @@ public class EskyTileEntity extends XChestTileEntity
 	{
 		return new TranslationTextComponent("container.foodfunk.esky");
 	}
-	
-	@Override
-    protected SoundEvent getOpenSoundEvent()
-    {
-        return ModObjectHolder.esky_open;
-    }
 
-	@Override
-    protected SoundEvent getCloseSoundEvent()
-    {
-        return ModObjectHolder.esky_close;
-    }
 }

@@ -7,12 +7,12 @@ import javax.annotation.Nullable;
 import com.wumple.foodfunk.capability.rot.IRot;
 import com.wumple.foodfunk.capability.rot.Rot;
 import com.wumple.foodfunk.capability.rot.RotInfo;
-import com.wumple.util.capability.listener.network.UpdateContainerCapabilityMessage;
 
 import net.minecraft.inventory.container.Container;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.Direction;
 import net.minecraftforge.fml.network.NetworkEvent;
+import com.wumple.util.capability.listener.network.UpdateContainerCapabilityMessage;
 
 /**
  * Updates the {@link IRotFinite} for a single slot of a {@link Container}.

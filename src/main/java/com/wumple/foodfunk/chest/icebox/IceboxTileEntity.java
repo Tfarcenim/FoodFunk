@@ -1,17 +1,14 @@
 package com.wumple.foodfunk.chest.icebox;
 
 import com.wumple.foodfunk.ModObjectHolder;
-import com.wumple.util.xchest2.XChestTileEntity;
-
-import net.minecraft.util.SoundEvent;
+import com.wumple.foodfunk.util.SingleChestBlockEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class IceboxTileEntity extends XChestTileEntity
-{
-	public IceboxTileEntity()
-	{
-		super(ModObjectHolder.IceboxBlock_Tile);
+public class IceboxTileEntity extends SingleChestBlockEntity {
+
+	public IceboxTileEntity() {
+		super(ModObjectHolder.IceboxBlock_Tile,ModObjectHolder.icebox_open,ModObjectHolder.icebox_close);
 	}
 
 	@Override
@@ -19,16 +16,5 @@ public class IceboxTileEntity extends XChestTileEntity
 	{
 		return new TranslationTextComponent("container.foodfunk.icebox");
 	}
-	
-	@Override
-    protected SoundEvent getOpenSoundEvent()
-    {
-        return ModObjectHolder.icebox_open;
-    }
 
-	@Override
-    protected SoundEvent getCloseSoundEvent()
-    {
-        return ModObjectHolder.icebox_close;
-    }
 }

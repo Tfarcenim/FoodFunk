@@ -77,7 +77,7 @@ public class PreservingHandler extends TimerRefreshingEventHandler<IPreserving>
         	IPreserving ip = lo.orElse(null);
         	event.addCapability(Preserving.ID, capabilityProvider);
         	event.addListener(
-        			() -> { ip.invalidateCap(); }
+                  ip::invalidateCap
         			);
         }
     }

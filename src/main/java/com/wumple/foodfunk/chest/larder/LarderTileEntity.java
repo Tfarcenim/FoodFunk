@@ -1,17 +1,17 @@
 package com.wumple.foodfunk.chest.larder;
 
 import com.wumple.foodfunk.ModObjectHolder;
-import com.wumple.util.xchest2.XChestTileEntity;
 
+import com.wumple.foodfunk.util.SingleChestBlockEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class LarderTileEntity extends XChestTileEntity
+public class LarderTileEntity extends SingleChestBlockEntity
 {
 	public LarderTileEntity()
 	{
-		super(ModObjectHolder.LarderBlock_Tile);
+		super(ModObjectHolder.LarderBlock_Tile,ModObjectHolder.larder_open,ModObjectHolder.larder_close);
 	}
 	
 	@Override
@@ -19,16 +19,5 @@ public class LarderTileEntity extends XChestTileEntity
 	{
 		return new TranslationTextComponent("container.foodfunk.larder");
 	}
-	
-	@Override
-    protected SoundEvent getOpenSoundEvent()
-    {
-        return ModObjectHolder.larder_open;
-    }
 
-	@Override
-    protected SoundEvent getCloseSoundEvent()
-    {
-        return ModObjectHolder.larder_close;
-    }
 }

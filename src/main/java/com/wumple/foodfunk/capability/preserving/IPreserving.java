@@ -6,6 +6,7 @@ import com.wumple.foodfunk.capability.preserving.IPreserving.IPreservingOwner;
 import com.wumple.foodfunk.capability.rot.IRot;
 import com.wumple.foodfunk.capability.rot.RotInfo;
 import com.wumple.foodfunk.configuration.ConfigHandler;
+
 import com.wumple.util.adapter.EntityThing;
 import com.wumple.util.adapter.IThing;
 import com.wumple.util.adapter.ItemStackThing;
@@ -13,7 +14,6 @@ import com.wumple.util.adapter.TileEntityThing;
 import com.wumple.util.capability.CapabilityUtils;
 import com.wumple.util.capability.timerrefreshing.ITimerRefreshingCap;
 import com.wumple.util.container.ContainedByUtil;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -36,14 +36,14 @@ public interface IPreserving extends ITimerRefreshingCap<IPreservingOwner, RotIn
         return CapabilityUtils.fetchCapability(provider, Preserving.CAPABILITY, Preserving.DEFAULT_FACING);
     }
     
-    public static interface IPreservingOwner extends IThing
+    interface IPreservingOwner extends IThing
     {
         // Preserving specific
-        public NonNullList<PlayerEntity> getPlayersWithContainerOpen(ItemStack itemToSearchFor);
-        public Integer getPreservingProperty();
+        NonNullList<PlayerEntity> getPlayersWithContainerOpen(ItemStack itemToSearchFor);
+        Integer getPreservingProperty();
     }
     
-    public static class TileEntityPreservingOwner extends TileEntityThing implements IPreservingOwner
+    class TileEntityPreservingOwner extends TileEntityThing implements IPreservingOwner
     {
     	public TileEntityPreservingOwner(TileEntity ownerIn)
     	{
@@ -61,7 +61,7 @@ public interface IPreserving extends ITimerRefreshingCap<IPreservingOwner, RotIn
         }  
     }
     
-    public static class EntityPreservingOwner extends EntityThing implements IPreservingOwner
+    class EntityPreservingOwner extends EntityThing implements IPreservingOwner
     {
     	public EntityPreservingOwner(Entity entity)
     	{
@@ -79,7 +79,7 @@ public interface IPreserving extends ITimerRefreshingCap<IPreservingOwner, RotIn
         }
     }
     
-    public static class ItemStackPreservingOwner extends ItemStackThing implements IPreservingOwner
+    class ItemStackPreservingOwner extends ItemStackThing implements IPreservingOwner
     {
         public ItemStackPreservingOwner(ItemStack it)
         {

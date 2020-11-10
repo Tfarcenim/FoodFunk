@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 import javax.annotation.Nullable;
 
-import org.apache.commons.lang3.tuple.Pair;
-
-import com.wumple.foodfunk.ModObjectHolder;
-import com.wumple.foodfunk.capability.rot.RotProperty;
 import com.wumple.util.adapter.IThing;
 import com.wumple.util.config.MatchingConfig;
 import com.wumple.util.config.NameKeys;
 import com.wumple.util.config.SimpleMatchingConfig;
 import com.wumple.util.config.StringMatchingDualConfig;
+import org.apache.commons.lang3.tuple.Pair;
+
+import com.wumple.foodfunk.ModObjectHolder;
+import com.wumple.foodfunk.capability.rot.RotProperty;
 
 import net.minecraft.item.Items;
 
@@ -146,7 +146,7 @@ public class ConfigHandler
         public boolean doesRot(IThing thing)
         {
             RotProperty rotProps = getRotProperty(thing);
-            return (rotProps == null) ? false : rotProps.doesRot();
+            return (rotProps != null) && rotProps.doesRot();
         }
 
         @Nullable

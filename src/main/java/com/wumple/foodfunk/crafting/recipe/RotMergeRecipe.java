@@ -6,6 +6,7 @@ import com.wumple.util.capability.copier.CapMergeRecipe;
 
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
@@ -32,6 +33,26 @@ public class RotMergeRecipe extends CapMergeRecipe<IRot>
 	public boolean matches(CraftingInventory inv, World worldIn)
 	{
 		return ConfigHandler.isRotMergeRecipeEnabled() && super.matches(inv, worldIn);
+	}
+
+	@Override
+	public boolean canFit(int width, int height) {
+		return false;
+	}
+
+	@Override
+	public ItemStack getRecipeOutput() {
+		return null;
+	}
+
+	@Override
+	public ResourceLocation getId() {
+		return null;
+	}
+
+	@Override
+	public IRecipeSerializer<?> getSerializer() {
+		return null;
 	}
 
 	@Override
