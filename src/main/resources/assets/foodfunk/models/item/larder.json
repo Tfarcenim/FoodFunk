@@ -1,3 +1,7 @@
 {
-    "parent": "item/chest"
+    "parent": "foodfunk:item/chest_item",
+    "textures": {
+        "0": "foodfunk:entity/larder",
+        "particle": "foodfunk:entity/larder"
+    }
 }

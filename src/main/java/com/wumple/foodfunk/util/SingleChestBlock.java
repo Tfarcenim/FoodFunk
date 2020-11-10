@@ -32,11 +32,11 @@ import java.util.function.Supplier;
 import static net.minecraft.block.ChestBlock.FACING;
 import static net.minecraft.block.SlabBlock.WATERLOGGED;
 
-public abstract class SingleChestBlock<E extends TileEntity> extends AbstractChestBlock<E> {
+public class SingleChestBlock<E extends TileEntity> extends AbstractChestBlock<E> {
 
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 14.0D, 15.0D);
 
-    protected SingleChestBlock(Properties builder, Supplier<TileEntityType<? extends E>> tileEntityTypeSupplier) {
+    public SingleChestBlock(Properties builder, Supplier<TileEntityType<? extends E>> tileEntityTypeSupplier) {
         super(builder, tileEntityTypeSupplier);
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(WATERLOGGED, false));
     }

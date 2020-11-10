@@ -1,14 +1,11 @@
 package com.wumple.foodfunk;
 
-import com.wumple.foodfunk.chest.esky.EskyBlock;
 import com.wumple.foodfunk.chest.esky.EskyTileEntity;
-import com.wumple.foodfunk.chest.freezer.FreezerBlock;
 import com.wumple.foodfunk.chest.freezer.FreezerTileEntity;
-import com.wumple.foodfunk.chest.icebox.IceboxBlock;
 import com.wumple.foodfunk.chest.icebox.IceboxTileEntity;
-import com.wumple.foodfunk.chest.larder.LarderBlock;
 import com.wumple.foodfunk.chest.larder.LarderTileEntity;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvent;
@@ -32,16 +29,16 @@ public class ModObjectHolder
     // containers
     
     @ObjectHolder("foodfunk:larder")
-    public static LarderBlock LarderBlock;
+    public static Block LarderBlock;
 
     @ObjectHolder("foodfunk:icebox")
-    public static IceboxBlock IceboxBlock;
+    public static Block IceboxBlock;
 
     @ObjectHolder("foodfunk:esky")
-    public static EskyBlock EskyBlock;
+    public static Block EskyBlock;
 
     @ObjectHolder("foodfunk:freezer")
-    public static FreezerBlock FreezerBlock;
+    public static Block FreezerBlock;
 
     @ObjectHolder("foodfunk:larder")
     public static TileEntityType<LarderTileEntity> LarderBlock_Tile;
